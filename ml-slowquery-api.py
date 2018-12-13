@@ -23,7 +23,7 @@ response = requests.get(url, auth=HTTPDigestAuth(username, password), cert=('/et
 data = response.json()
 
 #Configure the connection to the database
-client = MongoClient('localhost', 27017)    #Select the Dev host and port
+client = MongoClient('localhost', 27017)    #Select the db host and port
 db = client.dst    #Select the database
 col = db.slowQueries   #Select the collection
 
