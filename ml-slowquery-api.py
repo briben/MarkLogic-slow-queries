@@ -10,7 +10,8 @@ NO_PROXY = {
 }
 
 username = 'admin'
-password = 'password'
+#password = 'password'
+password = 'aGoo3goo'
 
 # Test/Stage API
 url = "http://localhost:8002/manage/LATEST/requests?format=json&seconds-min=3&fullrefs=true"
@@ -33,12 +34,11 @@ dataItems = data['request-default-list']['list-items']
 value = dataItems.get('list-item', "empty")
 
 if (value == 'empty'):
+	print '\n'
 	print "No list-items"
 
 else:
 	dataItemList = dataItems['list-item']
-	print '\n'
-	print "*** LIST ITEMS ***"
 
 	res = {}
 	
@@ -58,10 +58,11 @@ else:
 		timeLimit = props['item-properties']['time-limit']['value']
 		exTreeHits = props['item-properties']['expanded-tree-cache-hits']['value']
 		exTreeMiss = props['item-properties']['expanded-tree-cache-misses']['value']
+		print '\n'
 		print 'Query Inserted'
 		print 'Query Duration (s): ' + str(secs)
 		print 'Start Time: ' + sTime
-		print '\n'
+		
 		
 		# Add the values to a dictionary
 		req_doc = {'request-id': req_id,'transaction_id': t_id, 'app-server': ml_server, 'database': ml_db, 'request-text': rt, 'query-duration': secs, 'start-time': sTime,'expanded-tree-cache-hits':exTreeHits,'expanded-tree-cache-misses':exTreeMiss,'max-time-limit':maxTimeLimit,'time-limit':timeLimit}
