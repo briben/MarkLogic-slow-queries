@@ -47,6 +47,7 @@ else:
 		req_id = props['idref']
 
 		# Used with '&fullrefs=true'
+		host = props['relation'][0]['nameref']
 		ml_server = props['relation'][1]['nameref']
 		ml_db = props['relation'][2]['nameref']
 		t_id = props['relation'][3]['idref']
@@ -65,7 +66,7 @@ else:
 		
 		
 		# Add the values to a dictionary
-		req_doc = {'request-id': req_id,'transaction_id': t_id, 'app-server': ml_server, 'database': ml_db, 'request-text': rt, 'query-duration': secs, 'start-time': sTime,'expanded-tree-cache-hits':exTreeHits,'expanded-tree-cache-misses':exTreeMiss,'max-time-limit':maxTimeLimit,'time-limit':timeLimit}
+		req_doc = {'host':host, 'request-id': req_id,'transaction_id': t_id, 'app-server': ml_server, 'database': ml_db, 'request-text': rt, 'query-duration': secs, 'start-time': sTime,'expanded-tree-cache-hits':exTreeHits,'expanded-tree-cache-misses':exTreeMiss,'max-time-limit':maxTimeLimit,'time-limit':timeLimit}
 
 		# We don't want the default record returned in every ML json request, so strip those out!
 		if (ml_db != 'App-Services'):
