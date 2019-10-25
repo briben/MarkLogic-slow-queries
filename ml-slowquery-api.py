@@ -11,7 +11,7 @@ NO_PROXY = {
 
 username = 'admin'
 #password = 'password'
-password = 'aGoo3goo'
+password = 'xxxxxxxx'
 
 # Test/Stage API
 url = "http://localhost:8002/manage/LATEST/requests?format=json&seconds-min=3&fullrefs=true"
